@@ -24,12 +24,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Cache rustup toolchain
-        if: matrix.toolchain != 'nightly'
-        uses: actions/cache@v1
-        with:
-          path: ~/.rustup/toolchains
-          key: rustup-toolchain-${{ matrix.toolchain }}
       - name: Cache cargo build target
         if: matrix.toolchain != 'nightly'
         uses: actions/cache@v1
