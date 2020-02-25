@@ -35,7 +35,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: target
-          key: target-${{ runner.os }}-${{ matrix.toolchain }}-${{ matrix.runtime }}-${{ hashFiles('**/Cargo.lock') }}
+          key: target-${{ runner.os }}-${{ matrix.toolchain }}-${{ matrix.runtime }}-${{ hashFiles('**/Cargo.toml') }}
 
       - name: Install toolchain
         uses: actions-rs/toolchain@v1
@@ -70,7 +70,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: target
-          key: target-clippy-${{ runner.os }}-${{ hashFiles('**/Cargo.lock') }}
+          key: target-clippy-${{ runner.os }}-${{ hashFiles('**/Cargo.toml') }}
 
       - uses: actions-rs/toolchain@v1
         with:
@@ -117,7 +117,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: target
-          key: target-coverage-${{ runner.os }}-${{ matrix.toolchain }}-${{ hashFiles('**/Cargo.lock') }}
+          key: target-coverage-${{ runner.os }}-${{ matrix.toolchain }}-${{ hashFiles('**/Cargo.toml') }}
 
       - name: Install toolchain
         uses: actions-rs/toolchain@v1
